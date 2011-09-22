@@ -302,12 +302,11 @@ except ImportError:
     pass
 
 AUTHENTICATION_BACKENDS = (
-    'social_auth.backends.OpenIDBackend',
     'social_auth.backends.contrib.github.GithubBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_ENABLED_BACKENDS = ('openid', 'github')
+SOCIAL_AUTH_ENABLED_BACKENDS = ('github', )
 SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
 SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'associate_complete'
 SOCIAL_AUTH_DEFAULT_USERNAME = lambda u: slugify(u)
